@@ -1,7 +1,7 @@
 SPK_NAME = python3
 SPK_SHORT_VERS = 3.7
 SPK_VERS = $(SPK_SHORT_VERS).7
-SPK_REV = 12
+SPK_REV = 15
 SPK_ICON = src/python3.png
 
 DEPENDS  = cross/busybox cross/$(SPK_NAME)
@@ -21,7 +21,7 @@ DESCRIPTION_SPN = Lenguaje de programación Python.
 RELOAD_UI = yes
 STARTABLE = no
 DISPLAY_NAME = Python3
-CHANGELOG = "1. Update to Python 3.7.7"
+CHANGELOG = "Update openssl to 1.1"
 
 HOMEPAGE = http://www.python.org
 LICENSE  = PSF
@@ -34,7 +34,7 @@ PLIST_TRANSFORM = sed -e 's%@PYTHON_SITE_PACKAGES@%$(PYTHON_LIB_DIR)/site-packag
 
 POST_STRIP_TARGET = python3_extra_install
 
-BUSYBOX_CONFIG = usrmng nice daemon
+BUSYBOX_CONFIG = usrmng nice daemon patch
 ENV += BUSYBOX_CONFIG="$(BUSYBOX_CONFIG)"
 
 include ../../mk/spksrc.spk.mk
